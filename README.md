@@ -88,6 +88,15 @@ saucedemo-qa-automation/
 
 ---
 
+### 🐛 Gestión de bugs en Jira
+
+Los bugs encontrados fueron registrados como tickets en Jira 
+siguiendo el flujo profesional de reporte de defectos, incluyendo
+descripción, pasos de reproducción, prioridad y evidencia adjunta.
+
+![Jira Board](evidencias/jira-board.png)
+
+---
 ## ⚙️ Fase 2 — Automatización con Selenium
 
 ### Tecnologías
@@ -163,6 +172,7 @@ python tests/test_saucedemo.py
 | Google Chrome | Navegador de pruebas |
 | Microsoft Excel | Casos de prueba y Bug Reports |
 | Microsoft Word | Test Plan |
+| Jira | Gestión y seguimiento de bugs como tickets |
 | GitHub | Control de versiones y portfolio |
 
 ---
