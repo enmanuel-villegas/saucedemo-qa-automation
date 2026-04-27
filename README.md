@@ -22,9 +22,9 @@ saucedemo-qa-automation/
 ├── tests/
 │   └── test_saucedemo.py             # Suite de automatización con Selenium
 ├── evidencias/
-│   ├── BUG-001.png                   # Screenshots de bugs encontrados
+│   ├── BUG-001.png
 │   ├── BUG-002.png
-│   └── BUG-003.png
+│   └── ...                           # Screenshots de bugs encontrados
 ├── screenshots/                      # Capturas automáticas en fallos de automation
 ├── requirements.txt
 └── README.md
@@ -40,7 +40,7 @@ saucedemo-qa-automation/
 | URL | https://www.saucedemo.com |
 | Tipo | E-commerce web application |
 | Navegador | Google Chrome 124+ |
-| Usuario de prueba | standard_user / secret_sauce |
+| Usuario de prueba principal | standard_user / secret_sauce |
 
 ### Artefactos generados
 
@@ -55,7 +55,7 @@ saucedemo-qa-automation/
 - Campos: ID, precondiciones, pasos, resultado esperado, resultado real, estado, severidad, prioridad
 - Dashboard automático con métricas de ejecución
 
-### Resumen de ejecución
+### Resumen de ejecución — standard_user
 
 | Módulo | Casos | Resultado |
 |---|---|---|
@@ -63,18 +63,28 @@ saucedemo-qa-automation/
 | M-02 Catálogo de Productos | 6 | ✅ 6 Pass |
 | M-03 Carrito de Compras | 5 | ✅ 5 Pass |
 | M-04 Checkout | 7 | ✅ 7 Pass |
-| M-05 Navegación General | 3 | ✅ 3 Pass |
-| **Total** | **27** | **✅ 27 Pass** |
+| M-05 Navegación General | 3 | ⚠️ 2 Pass / 1 Fail |
+| **Total** | **27** | **✅ 26 Pass / ❌ 1 Fail** |
 
 ### Bug Reports
 
-Prueba exploratoria adicional con `problem_user` — bugs documentados en formato profesional con evidencia:
+**Bug encontrado con standard_user:**
 
 | Bug ID | Título | Severidad | Estado |
 |---|---|---|---|
-| BUG-001 | Imágenes incorrectas en catálogo con problem_user | Minor | Abierto |
-| BUG-002 | Botón Add to cart no responde para ciertos productos | Critical | Abierto |
-| BUG-003 | Nombre de producto incorrecto en página de detalle | Major | Abierto |
+| BUG-008 | Botones no regresan a 'Add to cart' después de Reset App State | Minor | Abierto |
+
+**Bugs encontrados en prueba exploratoria con problem_user:**
+
+| Bug ID | Título | Severidad | Estado |
+|---|---|---|---|
+| BUG-001 | Los filtros no funcionan correctamente con problem_user | Major | Abierto |
+| BUG-002 | Imagen incorrecta en productos con problem_user | Minor | Abierto |
+| BUG-003 | Botón 'Add to cart' no responde para algunos productos | Critical | Abierto |
+| BUG-004 | Redirección incorrecta en el detalle de productos | Critical | Abierto |
+| BUG-005 | Botón 'Remove' no funciona en la página de catálogo | Critical | Abierto |
+| BUG-006 | El campo 'Last Name' sobrescribe el valor de 'First Name' | Critical | Abierto |
+| BUG-007 | Enlace 'About' no funciona correctamente | Media | Abierto |
 
 ---
 
@@ -114,7 +124,7 @@ Prueba exploratoria adicional con `problem_user` — bugs documentados en format
 > TEST 05: Logout del sistema
   PASS - Logout exitoso. Redirigido a login.
 
-Ran 5 tests in 48.3s — OK
+Ran 5 tests in ~48s — OK (5/5)
 ```
 
 ---
@@ -159,8 +169,7 @@ python tests/test_saucedemo.py
 
 ## 👤 Autor
 
-**Enmanuel Villegas Duarte**  
-QA Engineer en formación  
+**Enmanuel Villegas Duarte**   
 📧 [enmanuel.villegas.duarte@outlook.com]
 ---
 
